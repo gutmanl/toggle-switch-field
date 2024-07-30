@@ -44,4 +44,11 @@ class ToggleSwitchField extends Field
             'detail_toggle' => $show
         ]);
     }
+
+    public function refreshOnToggle($refresh = true)
+    {
+        return $this->withMeta([
+            'refresh_on_toggle' => $refresh
+        ]);
+    }
 }

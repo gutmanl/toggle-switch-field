@@ -72,7 +72,11 @@ export default {
                 }.bind(this))
                 .catch(function (error) {
                     Nova.error(error);
-                }.bind(this));
+                }.bind(this)).finally(() => {
+                    if(this.field.refresh_on_toggle) {
+                        location.reload();
+                    }
+                });
         },
     }
 }

@@ -93,7 +93,11 @@ export default {
                 })
                 .catch((error) => {
                     Nova.error(error);
-                });
+                }).finally(() => {
+                    if(this.field.refresh_on_toggle) {
+                        Nova.$emit('refresh-resources');
+                    }
+            });
         },
     },
 };
